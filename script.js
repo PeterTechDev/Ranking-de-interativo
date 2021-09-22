@@ -21,14 +21,15 @@ function calcScore(player) {
 function fillRankBoard(players) {
     let element = '';
     for (index = 0; index < players.length; index++) {
-        element += `<tr><td> ${players[index].nome}</td>`;
+        element += `<tr id="player${index+1}" class="boardRow"><td> ${players[index].nome}</td>`;
         element += `<td> ${players[index].win}</td>`;
         element += `<td> ${players[index].draw}</td>`;
         element += `<td> ${players[index].defeat}</td>`;
         element += `<td> ${players[index].score}</td>`;
         element += `<td><button class="winBtn" onclick="addWin(${index})">Vitória</button></td>`
-        element += `<td><button class="winBtn" onclick="addDraw(${index})">Empate</button></td>`
-        element += `<td><button class="winBtn" onclick="addDefeat(${index})">Derrota</button></td>`
+        element += `<td><button class="drawBtn" onclick="addDraw(${index})">Empate</button></td>`
+        element += `<td><button class="defeatBtn" onclick="addDefeat(${index})">Derrota</button></td>`
+        element += `<td><button class="defeatBtn" onclick="deletePlayer(${index})">X</button></td>`
     }
     document.getElementById('board').innerHTML = element
 }
@@ -53,6 +54,11 @@ const addDefeat = (index) => {
     let playerIndex = players[index]
     playerIndex.defeat++;
     fillRankBoard(players)
+}
+
+const deletePlayer=(index)=>{
+    players.splice(index,1)[index]
+    document.getElementsByClassName('boardRow')[index].remove()
 }
 
 // BOTOÃO adicionar (EVENT NO HTML)
