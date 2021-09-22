@@ -36,3 +36,10 @@ function fillRankBoard (players){
 }
 
 fillRankBoard(players)
+
+const addWin = (index)=>{
+    let playerIndex = players[index]
+    playerIndex.win++;
+    playerIndex.score = calcScore(playerIndex);
+    fillRankBoard(players)
+}
