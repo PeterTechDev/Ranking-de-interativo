@@ -29,7 +29,7 @@ function fillRankBoard(players) {
         element += `<td><button class="winBtn" onclick="addWin(${index})">Vitória</button></td>`
         element += `<td><button class="drawBtn" onclick="addDraw(${index})">Empate</button></td>`
         element += `<td><button class="defeatBtn" onclick="addDefeat(${index})">Derrota</button></td>`
-        element += `<td><button class="defeatBtn" onclick="deletePlayer(${index})">X</button></td>`
+        element += `<td><button class="deleteBtn" onclick="deletePlayer(${index})">X</button></td>`
     }
     document.getElementById('board').innerHTML = element
 }
@@ -63,14 +63,16 @@ const deletePlayer=(index)=>{
 }
 
 // BOTÃO adicionar (EVENT NO HTML)
+let entry = document.getElementById('nameNewPlayer')
+
 const addNewPlayer = () => {
     let id = players.length + 1;
-    let entry = document.getElementById('newPlayer').value
 
-    players.push(window['player' + id] = new Player(entry))
+    players.push(window['player' + id] = new Player(entry.value))
 
     fillRankBoard(players)
     console.log(players)
+    entry.value = ''
 }
 
 // TODO: ADICIONAR PLAYER QUANDO PRESSIONAR ENTER
