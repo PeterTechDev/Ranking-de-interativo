@@ -1,3 +1,6 @@
+let players = []
+
+
 function Player(nome, win, draw, defeat, score) {
     this.nome = nome;
     this.win = 0;
@@ -6,19 +9,13 @@ function Player(nome, win, draw, defeat, score) {
     this.score = 0;
 }
 
-let peter = new Player("Peter")
-let lebron = new Player('LeBron James')
-
-peter.win = 3
-console.log(peter)
+let exemplo = new Player('Exemplo')
+players.push(exemplo)
 
 function calcScore(player) {
     let score = (player.win * 3) + player.draw
     return score
 }
-peter.score = calcScore(peter)
-
-let players = [peter, lebron]
 
 function fillRankBoard(players) {
     let element = '';
@@ -65,5 +62,5 @@ const addNewPlayer = () => {
     players.push(window['player' + id] = new Player(entry))
 
     fillRankBoard(players)
-
+    console.log(players)
 }
