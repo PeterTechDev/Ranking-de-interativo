@@ -57,11 +57,12 @@ const addDefeat = (index) => {
 }
 
 const deletePlayer=(index)=>{
-    players.splice(index,1)[index]
+    players.splice(index,index)
     document.getElementsByClassName('boardRow')[index].remove()
+    console.log(players)
 }
 
-// BOTOÃO adicionar (EVENT NO HTML)
+// BOTÃO adicionar (EVENT NO HTML)
 const addNewPlayer = () => {
     let id = players.length + 1;
     let entry = document.getElementById('newPlayer').value
