@@ -18,5 +18,21 @@ function calcScore(player){
 }
 peter.score = calcScore(peter)
 
+let players = [peter, lebron]
 
+function fillRankBoard (players){
+    let element = '';
+    for(index = 0; index < players.length; index++){
+        element += `<tr><td> ${players[index].nome}</td>`;
+        element += `<td> ${players[index].win}</td>`;
+        element += `<td> ${players[index].draw}</td>`;
+        element += `<td> ${players[index].defeat}</td>`;
+        element += `<td> ${players[index].score}</td>`;
+        element += `<td><button class="winBtn" onclick="addWin(${index})">Vitória</button></td>`
+        element += `<td><button class="winBtn" onclick="addWin(${index})">Empate</button></td>`
+        element += `<td><button class="winBtn" onclick="addWin(${index})">Derrota</button></td>`
+    }
+    document.getElementById('board').innerHTML = element
+}
 
+fillRankBoard(players)
