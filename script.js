@@ -72,3 +72,5 @@ const addNewPlayer = () => {
     fillRankBoard(players)
     console.log(players)
 }
+
+// TODO: ADICIONAR PLAYER QUANDO PRESSIONAR ENTER
