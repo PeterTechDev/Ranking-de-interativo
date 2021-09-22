@@ -2,7 +2,7 @@
 Projeto inspirado na aula 06 da imersão Dev da ALURA.
 
 
-##Objetivos do projeto
+## Objetivos do projeto
 * Remover o código estático do HTML;
 * Criar um objeto no Javascript para cada jogador;
 * Criar uma função que receba um objeto como parâmetro para calcular os pontos;
@@ -11,7 +11,7 @@ Projeto inspirado na aula 06 da imersão Dev da ALURA.
 * Recalcular os pontos quando vitória ou empate for adicionado.
 * Utilizar callbacks functions
 
-##Desafios extras!
+## Desafios extras!
 - [ ] Adicionar a imagem de cada jogador
 - [ ] Criar um botão para zerar todos os pontos
 - [x] Criar um botão e inputs (campos de texto) para adicionar novos jogadores, com seus respectivos dados
