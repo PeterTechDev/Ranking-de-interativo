@@ -13,7 +13,10 @@ peter.win = 3
 console.log(peter)
 
 function calcScore(player){
-    let score  = (player.score * 3) + player.draw
+    let score  = (player.win * 3) + player.draw
     return score
 }
+peter.score = calcScore(peter)
+
+
 
