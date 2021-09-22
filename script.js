@@ -29,8 +29,8 @@ function fillRankBoard (players){
         element += `<td> ${players[index].defeat}</td>`;
         element += `<td> ${players[index].score}</td>`;
         element += `<td><button class="winBtn" onclick="addWin(${index})">Vitória</button></td>`
-        element += `<td><button class="winBtn" onclick="addWin(${index})">Empate</button></td>`
-        element += `<td><button class="winBtn" onclick="addWin(${index})">Derrota</button></td>`
+        element += `<td><button class="winBtn" onclick="addDraw(${index})">Empate</button></td>`
+        element += `<td><button class="winBtn" onclick="addDefeat(${index})">Derrota</button></td>`
     }
     document.getElementById('board').innerHTML = element
 }
@@ -43,3 +43,17 @@ const addWin = (index)=>{
     playerIndex.score = calcScore(playerIndex);
     fillRankBoard(players)
 }
+
+const addDraw = (index)=>{
+    let playerIndex = players[index]
+    playerIndex.draw++;
+    playerIndex.score = calcScore(playerIndex);
+    fillRankBoard(players)
+}
+
+const addDefeat = (index)=>{
+    let playerIndex = players[index]
+    playerIndex.defeat++;
+    fillRankBoard(players)
+}
+
