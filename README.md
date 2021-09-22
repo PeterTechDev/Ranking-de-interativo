@@ -12,8 +12,8 @@ Projeto inspirado na aula 06 da imersão Dev da ALURA.
 * Utilizar callbacks functions
 
 ##Desafios extras!
-- [] Adicionar a imagem de cada jogador
-- [] Criar um botão para zerar todos os pontos
+- [ ] Adicionar a imagem de cada jogador
+- [ ] Criar um botão para zerar todos os pontos
 - [x] Criar um botão e inputs (campos de texto) para adicionar novos jogadores, com seus respectivos dados
 - [x] Utilizar objeto construtor
 
