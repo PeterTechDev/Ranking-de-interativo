@@ -1,6 +1,3 @@
-let players = []
-
-
 function Player(nome, win, draw, defeat, score) {
     this.nome = nome;
     this.win = 0;
@@ -9,14 +6,18 @@ function Player(nome, win, draw, defeat, score) {
     this.score = 0;
 }
 
-let exemplo = new Player('Exemplo')
-players.push(exemplo)
+// PREENCHER COM O EXEMPLO
+let players = []
+let exemplo = new Player('Exemplo');
+players.push(exemplo);
 
+// CALCULA OS PONTOS E ALTERA O VALOR EM PLAYER
 function calcScore(player) {
-    let score = (player.win * 3) + player.draw
-    return score
+    let score = (player.win * 3) + player.draw;
+    return score;
 }
 
+// PREENCHER A TABELA COM OS DADOS DOS JOGADORES
 function fillRankBoard(players) {
     let element = '';
     for (index = 0; index < players.length; index++) {
@@ -31,9 +32,9 @@ function fillRankBoard(players) {
     }
     document.getElementById('board').innerHTML = element
 }
-
 fillRankBoard(players)
 
+// BOTÕES win, draw, defeat(EVENT NO HTML)
 const addWin = (index) => {
     let playerIndex = players[index]
     playerIndex.win++;
@@ -54,7 +55,7 @@ const addDefeat = (index) => {
     fillRankBoard(players)
 }
 
-
+// BOTOÃO adicionar (EVENT NO HTML)
 const addNewPlayer = () => {
     let id = players.length + 1;
     let entry = document.getElementById('newPlayer').value
