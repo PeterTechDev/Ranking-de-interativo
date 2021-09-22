@@ -57,7 +57,7 @@ const addDefeat = (index) => {
 }
 
 const deletePlayer=(index)=>{
-    players.splice(index,index)
+    players.splice(index,1)[index+1]
     document.getElementsByClassName('boardRow')[index].remove()
     console.log(players)
 }
